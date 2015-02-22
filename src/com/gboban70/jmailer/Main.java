@@ -24,6 +24,7 @@ package com.gboban70.jmailer;
 public class Main {
 
    public static void main(String[] args) {
+
         try{
             JMailer mailer = new JMailer(args);
             mailer.send();

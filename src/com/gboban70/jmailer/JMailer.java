@@ -23,6 +23,7 @@ package com.gboban70.jmailer;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -163,9 +164,10 @@ public class JMailer {
         }else{
             ArrayList<String> toParams = this.getOptionParams("-to");
             boolean hasTo = false;
-            while(toParams.iterator().hasNext()){
+            Iterator<String> toIterator = toParams.iterator();
+            while(toIterator.hasNext()){
                 hasTo = true;
-                String to = toParams.iterator().next();
+                String to = toIterator.next();
                 this.message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(to));
             }
 
@@ -179,9 +181,10 @@ public class JMailer {
         if(index != -1){
             ArrayList<String> ccParams = this.getOptionParams("-cc");
             boolean hasCc = false;
-            while(ccParams.iterator().hasNext()){
+            Iterator<String> ccIterator = ccParams.iterator();
+            while(ccIterator.hasNext()){
                 hasCc = true;
-                String cc = ccParams.iterator().next();
+                String cc = ccIterator.next();
                 this.message.addRecipient(MimeMessage.RecipientType.CC, new InternetAddress(cc));
             }
 
@@ -195,9 +198,10 @@ public class JMailer {
         if(index != -1){
             ArrayList<String> bccParams = this.getOptionParams("-bcc");
             boolean hasBcc = false;
-            while(bccParams.iterator().hasNext()){
+            Iterator<String> bccIterator = bccParams.iterator();
+            while(bccIterator.hasNext()){
                 hasBcc = true;
-                String bcc = bccParams.iterator().next();
+                String bcc = bccIterator.next();
                 this.message.addRecipient(MimeMessage.RecipientType.BCC, new InternetAddress(bcc));
             }
 
