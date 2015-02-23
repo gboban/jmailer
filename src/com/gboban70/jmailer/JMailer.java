@@ -1,6 +1,8 @@
 package com.gboban70.jmailer;
 /**
  * Created by goran on 2/22/15.
+ *
+ * version 0.0.2
  */
 /*
 *	Copyright (C) 2015  Goran Boban
@@ -35,10 +37,6 @@ public class JMailer {
     private boolean verbose = false;
 
     private ArrayList<String> arguments = null;
-
-    public JMailer(ArrayList<String> arguments){
-        this.setArguments(arguments);
-    }
 
     public JMailer(String[] args){
         this.setArguments(args);
@@ -108,7 +106,7 @@ public class JMailer {
             if(host.charAt(0)=='-') host = null;
         }
         if(host != null){
-            this.properties.setProperty("mail.smtp.host", host);
+            this.setHost(host);
         }
 
         /* PORT (-p) */
@@ -120,7 +118,7 @@ public class JMailer {
         }
         if(strPort != null){
             int port = Integer.parseInt(strPort);
-            this.properties.setProperty("mail.smtp.host", Integer.toString(port));
+            this.setPort(port);
         }
 
         /* FROM (-from) */
@@ -129,17 +127,8 @@ public class JMailer {
         if(index != -1){
             from = this.arguments.get(index+1);
             if(from.charAt(0)=='-') from = null;
-        }else{
-            try{
-                from = this.properties.getProperty("user.name") + "@" + InetAddress.getLocalHost().getHostName();
-            }catch(UnknownHostException e){
-                from = this.properties.getProperty("user.name") + "@localhost";
-            }
         }
-        if(from == null){
-            throw new MessagingException("JMailer: switch requires argument: -from");
-        }
-        this.message.setFrom(from);
+        this.setFrom(from);
 
         /* SUBJECT (-s) */
         String subject = null;
@@ -155,7 +144,7 @@ public class JMailer {
             throw new MessagingException("JMailer: missing switch: -s");
         }
 
-        this.message.setSubject(subject);
+        this.setSubject(subject);
 
         /* TO (-to) */
         index = this.arguments.indexOf("-to");
@@ -168,7 +157,7 @@ public class JMailer {
             while(toIterator.hasNext()){
                 hasTo = true;
                 String to = toIterator.next();
-                this.message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(to));
+                this.addRecipientTo(to);
             }
 
             if(!hasTo){
@@ -185,7 +174,7 @@ public class JMailer {
             while(ccIterator.hasNext()){
                 hasCc = true;
                 String cc = ccIterator.next();
-                this.message.addRecipient(MimeMessage.RecipientType.CC, new InternetAddress(cc));
+                this.addRecipientCc(cc);
             }
 
             if(!hasCc){
@@ -202,7 +191,7 @@ public class JMailer {
             while(bccIterator.hasNext()){
                 hasBcc = true;
                 String bcc = bccIterator.next();
-                this.message.addRecipient(MimeMessage.RecipientType.BCC, new InternetAddress(bcc));
+                this.addRecipientBcc(bcc);
             }
 
             if(!hasBcc){
@@ -223,11 +212,72 @@ public class JMailer {
             body = "Reading from file";
         }
 
-        this.message.setText(body);
+        this.setBody(body);
 
         return this.message;
     }
 
+    /**
+     *
+     * Following methods are shortcuts for configuring MimeMessage and properties.
+     * in future, JMailer may be subclassed from MimeMessage containing Properties and Transport...
+     *
+     * parameter proccessing should be moved to Main
+     */
+    public void setHost(String host){
+        if(host == null || host == ""){
+            host =" localhost";
+        }
+        this.properties.setProperty("mail.smtp.host", host);
+    }
+
+    public void setPort(int port){
+        if(port<=0){
+            port = 25;
+        }
+        this.properties.setProperty("mail.smtp.port", Integer.toString(port));
+    }
+
+    public void setFrom(String from) throws MessagingException{
+        if(from == null || from == ""){
+            try{
+                from = this.properties.getProperty("user.name") + "@" + InetAddress.getLocalHost().getHostName();
+            }catch(UnknownHostException e){
+                from = this.properties.getProperty("user.name") + "@localhost";
+            }
+        }
+        this.message.setFrom(from);
+    }
+
+    public void setSubject(String subject) throws MessagingException{
+        if(subject == null){
+            subject = "";
+        }
+        this.message.setSubject(subject);
+    }
+
+    public void addRecipientTo(String recipient) throws MessagingException{
+        this.message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(recipient));
+    }
+
+    public void addRecipientCc(String recipient) throws MessagingException{
+        this.message.addRecipient(MimeMessage.RecipientType.CC, new InternetAddress(recipient));
+    }
+
+    public void addRecipientBcc(String recipient) throws MessagingException{
+        this.message.addRecipient(MimeMessage.RecipientType.BCC, new InternetAddress(recipient));
+    }
+
+    public void setBody(String text) throws MessagingException{
+        this.message.setText(text);
+    }
+
+    /**
+     * send()
+     * @throws MessagingException
+     *
+     * main method for sending message
+     */
     public void send() throws MessagingException{
         MimeMessage m = this.getMessage();
         Transport.send(m);

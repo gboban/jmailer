@@ -1,0 +1,7 @@
+NOW:
+- Move command line processing to Main.java
+- add support for sending message body
+
+FUTURE:
+- add support for html messages
+- add support for attachments
