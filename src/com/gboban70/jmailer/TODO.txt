@@ -1,6 +1,8 @@
 NOW:
 - Move command line processing to Main.java
 - add support for sending message body
+- fix bug when switch that requires parameters is the last argument on the command line
+- remove unnecessary use of ArrayList for arguments (inly needed for contains() and indexOf()?)
 
 FUTURE:
 - add support for html messages

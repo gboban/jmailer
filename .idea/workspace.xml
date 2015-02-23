@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d37695e-d862-40b5-9e8f-07aa4c5ae3fa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" />
     </list>
     <ignored path="jmailer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,7 +90,7 @@
       <file leaf-file-name="TODO.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="7" selection-start="96" selection-end="96" vertical-scroll-proportion="0.17142858" vertical-offset="0" max-vertical-offset="420">
+            <state line="4" column="95" selection-start="271" selection-end="271" vertical-scroll-proportion="0.17142858" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -114,9 +111,9 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/MailMessage.java" />
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/SMTPMailer.java" />
-        <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" />
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java" />
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" />
       </list>
     </option>
   </component>
@@ -448,7 +445,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="7" selection-start="96" selection-end="96" vertical-scroll-proportion="0.17142858" vertical-offset="0" max-vertical-offset="420">
+        <state line="4" column="95" selection-start="271" selection-end="271" vertical-scroll-proportion="0.17142858" vertical-offset="0" max-vertical-offset="420">
           <folding />
         </state>
       </provider>
