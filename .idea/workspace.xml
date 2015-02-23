@@ -71,11 +71,11 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="16" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3438">
+            <state line="8" column="12" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3438">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1078#1086#0" expanded="true" />
-                <element signature="e#1465#1473#0" expanded="true" />
+                <element signature="e#1079#1087#0" expanded="true" />
+                <element signature="e#1466#1474#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,13 +84,13 @@
       <file leaf-file-name="JMailer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="16" selection-start="85" selection-end="85" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="2682">
+            <state line="4" column="12" selection-start="81" selection-end="81" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="2682">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1631#1632#0" expanded="true" />
-                <element signature="e#1661#1662#0" expanded="true" />
-                <element signature="e#1708#1709#0" expanded="true" />
-                <element signature="e#1746#1747#0" expanded="true" />
+                <element signature="e#1632#1633#0" expanded="true" />
+                <element signature="e#1662#1663#0" expanded="true" />
+                <element signature="e#1709#1710#0" expanded="true" />
+                <element signature="e#1747#1748#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,7 +99,7 @@
       <file leaf-file-name="TODO.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="1" selection-start="368" selection-end="368" vertical-scroll-proportion="0.26535627" vertical-offset="0" max-vertical-offset="407">
+            <state line="6" column="29" selection-start="396" selection-end="396" vertical-scroll-proportion="0.26535627" vertical-offset="0" max-vertical-offset="407">
               <folding />
             </state>
           </provider>
@@ -413,8 +413,8 @@
         <state line="26" column="0" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="738">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1078#1086#0" expanded="true" />
-            <element signature="e#1465#1473#0" expanded="true" />
+            <element signature="e#1079#1087#0" expanded="true" />
+            <element signature="e#1466#1474#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -424,10 +424,10 @@
         <state line="233" column="0" selection-start="7517" selection-end="7517" vertical-scroll-proportion="0.0" vertical-offset="3931" max-vertical-offset="4338">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1661#1662#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1662#1663#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+            <element signature="e#1747#1748#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -444,31 +444,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="153" selection-end="153" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3438">
+        <state line="8" column="12" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3438">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1078#1086#0" expanded="true" />
-            <element signature="e#1465#1473#0" expanded="true" />
+            <element signature="e#1079#1087#0" expanded="true" />
+            <element signature="e#1466#1474#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="85" selection-end="85" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="2682">
+        <state line="4" column="12" selection-start="81" selection-end="81" vertical-scroll-proportion="-2.4" vertical-offset="0" max-vertical-offset="2682">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-            <element signature="e#1661#1662#0" expanded="true" />
-            <element signature="e#1708#1709#0" expanded="true" />
-            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1632#1633#0" expanded="true" />
+            <element signature="e#1662#1663#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
+            <element signature="e#1747#1748#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="1" selection-start="368" selection-end="368" vertical-scroll-proportion="0.26535627" vertical-offset="0" max-vertical-offset="407">
+        <state line="6" column="29" selection-start="396" selection-end="396" vertical-scroll-proportion="0.26535627" vertical-offset="0" max-vertical-offset="407">
           <folding />
         </state>
       </provider>

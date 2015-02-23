@@ -4,7 +4,7 @@ v0.0.3:
 so all recipients can be added in the single step. Create _basic_addRecipients(type, recipients)
 in JMailer.java
 + NOTHING TO FIX - fix bug when switch that requires parameters is the last argument on the command line
-+ update version to v0.0.4
++ update version to version v0.0.4
 
 FUTURE:
 - NOT SURE ABOUT THIS: remove unnecessary use of ArrayList for arguments (only needed for contains() and indexOf()?)

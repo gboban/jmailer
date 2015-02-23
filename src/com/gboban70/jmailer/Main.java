@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * Created by goran on 2/22/15.
  *
- * version 0.0.4
+ * version v0.0.4
  */
 /*
 *	Copyright (C) 2015  Goran Boban
