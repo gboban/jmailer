@@ -2,12 +2,11 @@ package com.gboban70.jmailer;
 
 import javax.mail.MessagingException;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /**
  * Created by goran on 2/22/15.
  *
- * version 0.0.2
+ * version 0.0.4
  */
 /*
 *	Copyright (C) 2015  Goran Boban
@@ -134,13 +133,8 @@ public class Main {
             throw new MessagingException("JMailer: missing switch: -to");
         }else{
             ArrayList<String> toParams = getOptionParams("-to", arguments);
-            boolean hasTo = false;
-            Iterator<String> toIterator = toParams.iterator();
-            while(toIterator.hasNext()){
-                hasTo = true;
-                String to = toIterator.next();
-                mailer.addRecipientTo(to);
-            }
+            boolean hasTo = !toParams.isEmpty();
+            mailer.addRecipientsTo(toParams);
 
             if(!hasTo){
                 throw new MessagingException("JMailer: switch requires argument: -to");
@@ -151,13 +145,8 @@ public class Main {
         index = arguments.indexOf("-cc");
         if(index != -1){
             ArrayList<String> ccParams = getOptionParams("-cc", arguments);
-            boolean hasCc = false;
-            Iterator<String> ccIterator = ccParams.iterator();
-            while(ccIterator.hasNext()){
-                hasCc = true;
-                String cc = ccIterator.next();
-                mailer.addRecipientCc(cc);
-            }
+            boolean hasCc = !ccParams.isEmpty();
+            mailer.addRecipientsCc(ccParams);
 
             if(!hasCc){
                 throw new MessagingException("JMailer: switch requires argument: -cc");
@@ -168,13 +157,8 @@ public class Main {
         index = arguments.indexOf("-bcc");
         if(index != -1){
             ArrayList<String> bccParams = getOptionParams("-bcc", arguments);
-            boolean hasBcc = false;
-            Iterator<String> bccIterator = bccParams.iterator();
-            while(bccIterator.hasNext()){
-                hasBcc = true;
-                String bcc = bccIterator.next();
-                mailer.addRecipientBcc(bcc);
-            }
+            boolean hasBcc = !bccParams.isEmpty();
+            mailer.addRecipientsBcc(bccParams);
 
             if(!hasBcc){
                 throw new MessagingException("JMailer: switch requires argument: -bcc");

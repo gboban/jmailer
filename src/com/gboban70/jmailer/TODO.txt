@@ -1,13 +1,14 @@
 v0.0.3:
 + Move command line processing to Main.java
-- add addRecipientsTo, addRecipientsCc, addRecipientsBcc to JMailer.java with ArrayList agrument
++ add addRecipientsTo, addRecipientsCc, addRecipientsBcc to JMailer.java with ArrayList agrument
 so all recipients can be added in the single step. Create _basic_addRecipients(type, recipients)
 in JMailer.java
-- fix bug when switch that requires parameters is the last argument on the command line
-- remove unnecessary use of ArrayList for arguments (only needed for contains() and indexOf()?)
-- update version to v0.0.4
++ NOTHING TO FIX - fix bug when switch that requires parameters is the last argument on the command line
++ update version to v0.0.4
 
 FUTURE:
+- NOT SURE ABOUT THIS: remove unnecessary use of ArrayList for arguments (only needed for contains() and indexOf()?)
 - add support for sending message body
 - add support for html messages
 - add support for attachments
+

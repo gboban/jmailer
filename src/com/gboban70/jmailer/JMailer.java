@@ -2,7 +2,7 @@ package com.gboban70.jmailer;
 /**
  * Created by goran on 2/22/15.
  *
- * version 0.0.2
+ * version 0.0.4
  */
 /*
 *	Copyright (C) 2015  Goran Boban
@@ -24,8 +24,14 @@ package com.gboban70.jmailer;
 */
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Properties;
-import javax.mail.*;
+//import javax.mail.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Transport;
+import javax.mail.Session;
 import javax.mail.internet.*;
 
 public class JMailer {
@@ -90,15 +96,35 @@ public class JMailer {
     }
 
     public void addRecipientTo(String recipient) throws MessagingException{
-        this.message.addRecipient(MimeMessage.RecipientType.TO, new InternetAddress(recipient));
+        this.message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
     }
 
     public void addRecipientCc(String recipient) throws MessagingException{
-        this.message.addRecipient(MimeMessage.RecipientType.CC, new InternetAddress(recipient));
+        this.message.addRecipient(Message.RecipientType.CC, new InternetAddress(recipient));
     }
 
     public void addRecipientBcc(String recipient) throws MessagingException{
-        this.message.addRecipient(MimeMessage.RecipientType.BCC, new InternetAddress(recipient));
+        this.message.addRecipient(Message.RecipientType.BCC, new InternetAddress(recipient));
+    }
+
+    protected void _basic_addRecipients(Message.RecipientType recipientType, ArrayList<String> recipients) throws MessagingException{
+        Iterator<String> recipientIterator = recipients.iterator();
+        while(recipientIterator.hasNext()){
+            String recipient = recipientIterator.next();
+            message.addRecipient(recipientType, new InternetAddress(recipient));
+        }
+    }
+
+    public void addRecipientsTo(ArrayList<String> recipients) throws MessagingException{
+        this._basic_addRecipients(Message.RecipientType.TO, recipients);
+    }
+
+    public void addRecipientsCc(ArrayList<String> recipients) throws MessagingException{
+        this._basic_addRecipients(Message.RecipientType.CC, recipients);
+    }
+
+    public void addRecipientsBcc(ArrayList<String> recipients) throws MessagingException{
+        this._basic_addRecipients(Message.RecipientType.BCC, recipients);
     }
 
     public void setBody(String text) throws MessagingException{
