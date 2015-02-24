@@ -11,4 +11,5 @@ FUTURE:
 - add support for sending message body
 - add support for html messages
 - add support for attachments
+- create separate Class for handling commandline parameters - should be reusable.
 
