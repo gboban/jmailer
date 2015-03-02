@@ -3,7 +3,7 @@ package com.gboban70.jmailer;
  *
  * @author Goran Boban
  * @since 2015-02-22
- * @version v0.0.4
+ * @version v0.1.0
  */
 /*
 *	Copyright (C) 2015  Goran Boban
@@ -71,11 +71,19 @@ public class JMailer {
         this.properties.setProperty("mail.smtp.host", host);
     }
 
+    public String getHost(){
+        return this.properties.getProperty("mail.smtp.host");
+    }
+
     public void setPort(int port){
         if(port<=0){
             port = 25;
         }
         this.properties.setProperty("mail.smtp.port", Integer.toString(port));
+    }
+
+    public String getPort(){
+        return this.properties.getProperty("mail.smtp.port");
     }
 
     public void setFrom(String from) throws MessagingException{
@@ -87,6 +95,10 @@ public class JMailer {
             }
         }
         this.message.setFrom(from);
+    }
+
+    public String getFrom(){
+        return this.properties.getProperty("user.name");
     }
 
     public void setSubject(String subject) throws MessagingException{

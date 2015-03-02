@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author Goran Boban
  * @since 2015-02-22
- * @version v0.0.4
+ * @version v0.1.0
  */
 /*
 *	Copyright (C) 2015  Goran Boban
@@ -31,37 +31,6 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static ArrayList<String> getStringArrayList(String[] args) {
-
-        ArrayList<String> result = new ArrayList<String>();
-
-        for(int i = 0; i < args.length; ++i){
-            result.add(args[i]);
-        }
-
-        return result;
-    }
-
-    private static ArrayList<String> getOptionParams(String option, ArrayList<String> arguments){
-        int index = arguments.indexOf(option);
-        if(index == -1){
-            return null;
-        }
-
-        ArrayList<String> result = new ArrayList<String>();
-        for(int i = index + 1; i < arguments.toArray().length; ++i){
-            String argument = arguments.get(i);
-
-            // check if element is next option
-            if(argument.charAt(0) == '-'){
-                break;
-            }
-
-            result.add(argument);
-        }
-        return result;
-    }
-
     private static String readBody(InputStream in) throws IOException {
 
         BufferedInputStream reader = new BufferedInputStream(in);
@@ -70,130 +39,106 @@ public class Main {
         return new String(buffer);
     }
 
-    public static void main(String[] args) throws MessagingException, IOException {
+    public static void main(String[] args) throws MessagingException, IOException, Exception {
         JMailer mailer = new JMailer();
-       /**
-        * get arguments as ArrayList of strings for convenience (contains(), indexOf()...)
-        */
-        ArrayList<String> arguments = getStringArrayList(args);
+
+        CmdLineArguments clargs = new CmdLineArguments(args);
 
         /**
-         * process switches
+         * process arguments
          */
-                /* VERBOSE (-v) */
-        mailer.setVerbose(arguments.indexOf("-v") != -1);
+         /* VERBOSE (-v) */
+        mailer.setVerbose(clargs.hasArgument("-v"));
 
         /* TIMEOUT (-t) */
-        int index = arguments.indexOf("-t");
-        if(index != -1){
-            throw new MessagingException("JMailer: switch is not used: -t");
+        if(clargs.hasArgument("-t")){
+            throw new Exception("JMailer: switch is not used: -t");
         }
 
         /* HOST (-h) */
-        index = arguments.indexOf("-h");
-        String host = null;
-        if(index != -1){
-            host = arguments.get(index+1);
-            if(host.charAt(0)=='-') host = null;
-        }
-        if(host != null){
+        try{
+            String host = clargs.getSignleArgument("-h");
             mailer.setHost(host);
+        }catch(CmdLineArguments.CmdLineNoSuchArgumentException clex){
+            System.out.println("No host specified (-h) - using default SMTP host: " + mailer.getHost());
+        }catch(CmdLineArguments.CmdLineMissingArgumentException clex){
+            System.out.println("Missing host name after '-h' option - using default SMTP host" + mailer.getHost());
         }
 
         /* PORT (-p) */
-        index = arguments.indexOf("-p");
-        String strPort = null;
-        if(index != -1){
-            strPort = arguments.get(index+1);
-            if(strPort.charAt(0)=='-') strPort = null;
-        }
-        if(strPort != null){
-            int port = Integer.parseInt(strPort);
-            mailer.setPort(port);
+        try{
+            String port = clargs.getSignleArgument("-p");
+            mailer.setPort(Integer.parseInt(port));
+        }catch(CmdLineArguments.CmdLineNoSuchArgumentException clex){
+            System.out.println("No port specified (-p) - using default SMTP port: " + mailer.getPort());
+        }catch(CmdLineArguments.CmdLineMissingArgumentException clex){
+            System.out.println("Missing port number after '-p' option - using default SMTP port" + mailer.getPort());
         }
 
         /* FROM (-from) */
-        String from = null;
-        index = arguments.indexOf("-from");
-        if(index != -1){
-            from = arguments.get(index+1);
-            if(from.charAt(0)=='-') from = null;
-        }
-        mailer.setFrom(from);
-
-        /* SUBJECT (-s) */
-        String subject = null;
-        index = arguments.indexOf("-s");
-        if(index != -1){
-            subject = arguments.get(index+1);
-            if(from.charAt(0)=='-') subject = null;
-
-            if(subject == null){
-                throw new MessagingException("JMailer: switch requires argument: -s");
-            }
-        }else{
-            throw new MessagingException("JMailer: missing switch: -s");
+        try{
+            String from = clargs.getSignleArgument("-from");
+            mailer.setFrom(from);
+        }catch(CmdLineArguments.CmdLineNoSuchArgumentException clex){
+            System.out.println("No from option sepcified (-from) - using default from: " + mailer.getFrom());
+        }catch(CmdLineArguments.CmdLineMissingArgumentException clex){
+            System.out.println("Missing from address after '-from' option - using default from" + mailer.getFrom());
         }
 
-        mailer.setSubject(subject);
+        try{
+            String subject = clargs.getSignleArgument("-s");
+            mailer.setSubject(subject);
+        }catch(CmdLineArguments.CmdLineNoSuchArgumentException clex){
+            System.out.println("No subject option sepcified (-s) - sending e-mail without subject line!");
+        }catch(CmdLineArguments.CmdLineMissingArgumentException clex){
+            System.out.println("Missing subject after '-s' option -  - sending e-mail without subject line!");
+        }
 
         /* TO (-to) */
-        index = arguments.indexOf("-to");
-        if(index == -1){
-            throw new MessagingException("JMailer: missing switch: -to");
-        }else{
-            ArrayList<String> toParams = getOptionParams("-to", arguments);
-            boolean hasTo = !toParams.isEmpty();
-            mailer.addRecipientsTo(toParams);
+        try{
+            ArrayList<String> toArguments = clargs.getArguments("-to");
+            mailer.addRecipientsTo(toArguments);
+        }catch(CmdLineArguments.CmdLineNoSuchArgumentException clex){
+            throw new Exception("No to option sepcified (-to)!");
 
-            if(!hasTo){
-                throw new MessagingException("JMailer: switch requires argument: -to");
-            }
+        }catch(CmdLineArguments.CmdLineMissingArgumentException clex){
+            throw new Exception("Missing arguments after '-to' option!");
         }
 
         /* CC (-cc) */
-        index = arguments.indexOf("-cc");
-        if(index != -1){
-            ArrayList<String> ccParams = getOptionParams("-cc", arguments);
-            boolean hasCc = !ccParams.isEmpty();
-            mailer.addRecipientsCc(ccParams);
-
-            if(!hasCc){
-                throw new MessagingException("JMailer: switch requires argument: -cc");
-            }
+        try{
+            ArrayList<String> ccArguments = clargs.getArguments("-cc");
+            mailer.addRecipientsCc(ccArguments);
+        }catch(CmdLineArguments.CmdLineNoSuchArgumentException clex){
+            // this is not an errorous condition - should be eventually logged
+        }catch(CmdLineArguments.CmdLineMissingArgumentException clex){
+            throw new Exception("Missing arguments after '-cc' option!");
         }
 
         /* BCC (-bcc) */
-        index = arguments.indexOf("-bcc");
-        if(index != -1){
-            ArrayList<String> bccParams = getOptionParams("-bcc", arguments);
-            boolean hasBcc = !bccParams.isEmpty();
-            mailer.addRecipientsBcc(bccParams);
-
-            if(!hasBcc){
-                throw new MessagingException("JMailer: switch requires argument: -bcc");
-            }
+        try{
+            ArrayList<String> bccArguments = clargs.getArguments("-bcc");
+            mailer.addRecipientsBcc(bccArguments);
+        }catch(CmdLineArguments.CmdLineNoSuchArgumentException clex){
+            // this is not an errorous condition - should be eventually logged
+        }catch(CmdLineArguments.CmdLineMissingArgumentException clex){
+            throw new Exception("Missing arguments after '-bcc' option!");
         }
 
         String body = "";
         /* READ FROM STDIN (-i) */
-        index = arguments.indexOf("-i");
-        if(index != -1){
-            body = "Reading from stdin";
+        if(clargs.hasArgument("-i")){
             body = readBody(System.in);
+            mailer.setBody(body);
         }
 
         /* FILE (-file) */
-        index = arguments.indexOf("-file");
-        if(index != -1){
-            body = "Reading from file";
-            ArrayList<String> fileParams = getOptionParams("-file", arguments);
-            String fileName = fileParams.get(0);
+        if(clargs.hasArgument("-file")){
+            String fileName = clargs.getSignleArgument("-file");
             FileInputStream fis = new FileInputStream(fileName);
             body = readBody(fis);
+            mailer.setBody(body);
         }
-
-        mailer.setBody(body);
 
         mailer.send();
     }

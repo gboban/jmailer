@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d37695e-d862-40b5-9e8f-07aa4c5ae3fa" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/CmdLineArguments.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" afterPath="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/jmailer_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/jmailer_jar.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="jmailer.iws" />
@@ -70,11 +69,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="3" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3672">
-              <folding />
+            <state line="4" column="27" selection-start="114" selection-end="114" vertical-scroll-proportion="0.12040134" vertical-offset="0" max-vertical-offset="2718">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CmdLineArguments.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/CmdLineArguments.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="10" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+              <folding>
+                <element signature="e#1679#1687#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,16 +103,16 @@
       <file leaf-file-name="JMailer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="3" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2448">
+            <state line="100" column="56" selection-start="3046" selection-end="3046" vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="2664">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TODO.txt" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TODO.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="17" selection-start="746" selection-end="746" vertical-scroll-proportion="0.48726115" vertical-offset="0" max-vertical-offset="628">
+            <state line="17" column="17" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="414">
               <folding />
             </state>
           </provider>
@@ -121,9 +133,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/MailMessage.java" />
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/SMTPMailer.java" />
+        <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" />
+        <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/CmdLineParameters.java" />
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java" />
         <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt" />
+        <option value="$PROJECT_DIR$/src/com/gboban70/jmailer/CmdLineArguments.java" />
       </list>
     </option>
   </component>
@@ -159,8 +173,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -217,6 +229,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -382,7 +396,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39940387" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -419,8 +433,40 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="3018" max-vertical-offset="3438">
+        <state line="8" column="22" selection-start="145" selection-end="145" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="3636">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3330">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="3" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="2700">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="414">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="12" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="3018" max-vertical-offset="3438">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -448,7 +494,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="12" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0" vertical-offset="3018" max-vertical-offset="3438">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -476,7 +524,9 @@
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="0" selection-start="913" selection-end="913" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="738">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -504,24 +554,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="17" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/JMailer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="3" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2448">
+        <state line="100" column="56" selection-start="3046" selection-end="3046" vertical-scroll-proportion="0.0" vertical-offset="1260" max-vertical-offset="2664">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/CmdLineArguments.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="10" selection-start="464" selection-end="464" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1440">
+          <folding>
+            <element signature="e#1679#1687#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="3" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3672">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/gboban70/jmailer/TODO.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="17" selection-start="746" selection-end="746" vertical-scroll-proportion="0.48726115" vertical-offset="0" max-vertical-offset="628">
-          <folding />
+        <state line="4" column="27" selection-start="114" selection-end="114" vertical-scroll-proportion="0.12040134" vertical-offset="0" max-vertical-offset="2718">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
