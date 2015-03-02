@@ -1,8 +1,9 @@
 package com.gboban70.jmailer;
 /**
- * Created by goran on 2/22/15.
  *
- * version v0.0.4
+ * @author Goran Boban
+ * @since 2015-02-22
+ * @version v0.0.4
  */
 /*
 *	Copyright (C) 2015  Goran Boban

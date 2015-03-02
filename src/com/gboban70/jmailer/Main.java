@@ -1,12 +1,14 @@
 package com.gboban70.jmailer;
 
 import javax.mail.MessagingException;
+import java.io.*;
 import java.util.ArrayList;
 
 /**
- * Created by goran on 2/22/15.
  *
- * version v0.0.4
+ * @author Goran Boban
+ * @since 2015-02-22
+ * @version v0.0.4
  */
 /*
 *	Copyright (C) 2015  Goran Boban
@@ -60,7 +62,15 @@ public class Main {
         return result;
     }
 
-    public static void main(String[] args) throws MessagingException {
+    private static String readBody(InputStream in) throws IOException {
+
+        BufferedInputStream reader = new BufferedInputStream(in);
+        byte[] buffer = new byte[reader.available()];
+        reader.read(buffer, 0, reader.available());
+        return new String(buffer);
+    }
+
+    public static void main(String[] args) throws MessagingException, IOException {
         JMailer mailer = new JMailer();
        /**
         * get arguments as ArrayList of strings for convenience (contains(), indexOf()...)
@@ -170,12 +180,17 @@ public class Main {
         index = arguments.indexOf("-i");
         if(index != -1){
             body = "Reading from stdin";
+            body = readBody(System.in);
         }
 
         /* FILE (-file) */
         index = arguments.indexOf("-file");
         if(index != -1){
             body = "Reading from file";
+            ArrayList<String> fileParams = getOptionParams("-file", arguments);
+            String fileName = fileParams.get(0);
+            FileInputStream fis = new FileInputStream(fileName);
+            body = readBody(fis);
         }
 
         mailer.setBody(body);
