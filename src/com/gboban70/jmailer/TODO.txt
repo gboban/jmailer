@@ -7,12 +7,14 @@ in JMailer.java
 + update version to version v0.0.4
 
 v0.0.9
-- add support for sending message body
++ add support for sending message body
+
+v0.1.0
++ create separate Class for handling commandline parameters - should be reusable.
 
 FUTURE:
 - NOT SURE ABOUT THIS: remove unnecessary use of ArrayList for arguments (only needed for contains() and indexOf()?)
 - add support for html messages
 - add support for attachments
-- create separate Class for handling commandline parameters - should be reusable.
 - JavaDoc
 - Add JUnit tests
